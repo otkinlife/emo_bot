@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
 #emoDiv {
     width: 200px;
     height: 200px;
@@ -6,8 +16,7 @@
     border-radius: 70px;
     background: #000000;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,15 +25,15 @@
 #emoCanvas {
     border-radius: 50px;
     position: absolute;
-    background-color: #000000; /* 添加背景色 */
+    background-color: #000000;
+    /* 添加背景色 */
 }
 
 #leftEar,
 #rightEar {
     width: 50px;
-    height: 150px;
+    height: 120px;
     background: #bbb;
-    border: 10px solid white;
     border-radius: 50px;
     position: absolute;
     top: 50%;
@@ -46,4 +55,58 @@
 
 button {
     margin-right: 10px;
+}
+
+#accessoryDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.headphone {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background-color: #f1c40f;
+    border: 5px solid #333;
+    border-radius: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2001;
+    /* 确保z-index高于其他元素 */
+}
+
+.headphone.left {
+    left: -85px;
+}
+
+.headphone.right {
+    right: -85px;
+}
+
+.headband {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background-color: #bdc3c7;
+    border: 5px solid #333;
+    border-radius: 50px 50px 0 0;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.connector {
+    position: absolute;
+    width: 270px;
+    height: 260px;
+    border: 10px solid #000000;
+    border-radius: 90px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    clip-path: ellipse(90% 50% at 50% 0%);
 }

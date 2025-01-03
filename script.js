@@ -23,7 +23,7 @@ const emotions = {
 
 // 装扮图片路径
 const accessories = {
-    headphones: 'images/accessories/headphones.png',
+    headphones: 'css',
     hat: 'images/accessories/hat.png'
 };
 
@@ -69,6 +69,7 @@ function renderAnimation(images) {
 function changeEmotion(emotion) {
     if (emotions[emotion]) {
         clearTimeout(animationFrameId);
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // 清除当前画布
         currentEmotion = emotion;
         currentFrame = 0;
         loadImages(emotion, (images) => {
@@ -81,13 +82,14 @@ function changeEmotion(emotion) {
 
 // 更改装扮
 function changeAccessory(accessory) {
-    if (accessories[accessory]) {
+    if (accessory === 'headphones') {
+        accessoryDiv.style.display = 'block';
+    } else if (accessory === 'hat') {
         accessoryDiv.style.backgroundImage = `url(${accessories[accessory]})`;
         accessoryDiv.style.backgroundSize = 'contain';
         accessoryDiv.style.backgroundRepeat = 'no-repeat';
     } else {
-        console.error('Accessory not found:', accessory);
-        accessoryDiv.style.backgroundImage = ''; // 清除装扮
+        accessoryDiv.style.display = 'none'; // 清除装扮
     }
 }
 
