@@ -1,0 +1,49 @@
+#emoDiv {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border: 20px solid white;
+    border-radius: 70px;
+    background: #000000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#emoCanvas {
+    border-radius: 50px;
+    position: absolute;
+    background-color: #000000; /* 添加背景色 */
+}
+
+#leftEar,
+#rightEar {
+    width: 50px;
+    height: 150px;
+    background: #bbb;
+    border: 10px solid white;
+    border-radius: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#leftEar {
+    left: -70px;
+}
+
+#rightEar {
+    right: -70px;
+}
+
+#buttonsDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    margin-right: 10px;
+}
